@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 import java.time.LocalDateTime;
@@ -29,10 +30,12 @@ public class SimpleController {
 //    }
 
     @RequestMapping("/showName")
-    public String showName(HttpServletRequest request, Model model){
-        String name = request.getParameter("slaveName");
-        name += " - employee Evil corporation";
+    public String showName(@RequestParam("slaveName") String name,
+                           @RequestParam("slaveAge") int age,
+                           Model model){
+        name += " - slave Evil corporation";
         model.addAttribute("additionName", name);
+        model.addAttribute("contractAge", age);
         model.addAttribute("nowDate", LocalDateTime.now());
         return "show-employee-name-view";
     }

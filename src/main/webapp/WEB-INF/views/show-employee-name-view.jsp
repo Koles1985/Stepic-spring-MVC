@@ -6,7 +6,7 @@
 <br>
 <br>
 <br>
-<h4>Now your name is ${additionName} today - ${nowDate}</h4>
+<h4>Now your name is ${additionName} your contract is ${contractAge} years, today - ${nowDate}</h4>
 
 </body>
 </html>

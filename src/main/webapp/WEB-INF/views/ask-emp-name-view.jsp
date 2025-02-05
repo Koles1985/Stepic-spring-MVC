@@ -13,9 +13,19 @@
 <form action="showName" method="get">
 	<input type="text" name="slaveName"
 	placeholder="enter your name!"/>
-	
+
+	<form action="showName" method="get">
+    	<input type="number" name="slaveAge"
+    	placeholder="enter your age!"/>
+
 	<input type="submit"/>
+
 </form>
+
+<br>
+<br>
+
+
 
 
 
