@@ -1,4 +1,3 @@
-<! DOCTYPE html>
 <html>
 <body>
 
@@ -22,5 +21,14 @@ Corporations : ${employee.corporations}
 <br>
 <br>
 Department   : ${employee.department}
+<br>
+<br>
+<br>
+Your car is   : ${employee.carBrand}
+<br>
+<br>
+<br>
+Languages :  ${employee.language}
+
 </body>
 </html>

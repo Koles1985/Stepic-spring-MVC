@@ -2,15 +2,19 @@ package com.prapor.spring.mvc;
 
 import com.prapor.spring.mvc.model.Employee;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.Calendar;
 
 @Controller
@@ -56,12 +60,21 @@ public class SimpleController {
     }
 
     @RequestMapping("/showResult")
-    public String eblaBlaBla(@ModelAttribute("employee")Employee employee){
+    public String eblaBlaBla(@Valid @ModelAttribute("employee")Employee employee, BindingResult bindingResult){
+        String lang = "";
+        for (String text : employee.getLanguages()){
 
-        employee.setRang("ипотечный Раб");
-        employee.setExperience(-1258963);
-        employee.setCorporations(employee.getCorporations().toString() + "--=Ебланк");
+            lang += text + ", ";
+        }
+        employee.setLanguage(lang);
 
-        return "show-employee-view";
+
+
+
+        if(bindingResult.hasErrors()){
+            return "registration-form";
+        }else {
+            return "show-employee-view";
+        }
     }
 }

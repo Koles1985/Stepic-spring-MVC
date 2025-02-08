@@ -6,9 +6,11 @@
 <form:form action="showResult" modelAttribute="employee">
 
     Имя <form:input path="name"/>
+    <form:errors path="name"/>
     <br>
     <br>
     Ранг <form:input path="rang"/>
+    <form:errors path="rang"/>
     <br>
     <br>
     Возраст <form:input path="age"/>
@@ -24,6 +26,19 @@
     Департамент <form:select path="department">
         <form:options items="${employee.departments}"/>
     </form:select>
+    <br>
+    <br>
+    Какую машину предпочитаете?
+    <form:radiobuttons path="carBrand" items="${employee.carBrands}"/>
+    <br>
+    <br>
+
+    Какими языками владеете?
+    RU<form:checkbox path="languages" value="Russian"/>
+    Ch<form:checkbox path="languages" value="China"/>
+    BY<form:checkbox path="languages" value="Belaruss"/>
+    <br>
+    <br>
 
     <input type="submit" value="Согласится и зарегистрироваться">
 
