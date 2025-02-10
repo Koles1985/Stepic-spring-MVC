@@ -14,6 +14,7 @@
     <br>
     <br>
     Возраст <form:input path="age"/>
+    <form:errors path="age"/>
     <br>
     <br>
     Опыт <form:input path="experience"/>
@@ -26,6 +27,10 @@
     Департамент <form:select path="department">
         <form:options items="${employee.departments}"/>
     </form:select>
+    <br>
+    <br>
+    Номер телефона : <form:input path="phoneNumber"/>
+    <form:errors path="phoneNumber"/>
     <br>
     <br>
     Какую машину предпочитаете?

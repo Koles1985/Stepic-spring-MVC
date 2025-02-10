@@ -1,8 +1,6 @@
 package com.prapor.spring.mvc.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +11,8 @@ public class Employee {
 //    @NotEmpty(message = "ранг не должен быть пустым!")
     @NotBlank(message = "ранг не должен быть пустым!")
     private String rang;
+    @Min(value = 25, message = "Age mast by minimum 25")
+    @Max(value = 70, message = "Age must by maximum 70")
     private int age;
     private int experience;
     private String corporations;
@@ -22,6 +22,8 @@ public class Employee {
     private Map<String, String> carBrands;
     private String[] languages;
     private String language;
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Use form xxx-xx-xx")
+    private String phoneNumber;
 
     public Employee() {
         departments = new HashMap<>();
@@ -121,6 +123,14 @@ public class Employee {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber (String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override

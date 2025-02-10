@@ -29,6 +29,10 @@ Your car is   : ${employee.carBrand}
 <br>
 <br>
 Languages :  ${employee.language}
+<br>
+<br>
+<br>
+Номер телефона : ${employee.phoneNumber}
 
 </body>
 </html>
