@@ -45,6 +45,11 @@
     <br>
     <br>
 
+    Ваш email <form:input path="email"/>
+    <form:errors path="email"/>
+    <br>
+    <br>
+
     <input type="submit" value="Согласится и зарегистрироваться">
 
 </form:form>

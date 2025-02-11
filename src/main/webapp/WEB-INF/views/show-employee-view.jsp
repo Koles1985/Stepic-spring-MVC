@@ -33,6 +33,9 @@ Languages :  ${employee.language}
 <br>
 <br>
 Номер телефона : ${employee.phoneNumber}
+<br>
+<br>
+Email адрес : ${employee.email}
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.prapor.spring.mvc.model;
 
+import com.prapor.spring.mvc.validation.CheckEmail;
 import jakarta.validation.constraints.*;
 
 import java.util.HashMap;
@@ -24,6 +25,8 @@ public class Employee {
     private String language;
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Use form xxx-xx-xx")
     private String phoneNumber;
+    @CheckEmail(value = "rzd.ru", message = "must by ends with rzd.ru")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -131,6 +134,14 @@ public class Employee {
 
     public void setPhoneNumber (String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
